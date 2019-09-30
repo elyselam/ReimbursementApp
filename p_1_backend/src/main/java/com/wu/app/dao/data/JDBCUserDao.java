@@ -6,6 +6,8 @@ import com.wu.app.utils.ConnectionManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
+
 public class JDBCUserDao implements UserRepository {
 
     private ConnectionManager cMan;
@@ -21,6 +23,11 @@ public class JDBCUserDao implements UserRepository {
 
     @Override
     public User findByLastName(String lastName) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<User> findAll() {
         return null;
     }
 
