@@ -1,0 +1,128 @@
+drop table Wu.Users cascade;
+drop table Wu.Ticket cascade;
+
+create table if not exists Wu.Users(
+   id serial primary key,
+   first_name VARCHAR(30) not null,
+   last_name VARCHAR(30) not null,
+   email varchar(50) unique not null,
+   hashPW CHAR(60) not null,
+   is_manager boolean not null default false
+);
+
+create table if not exists Wu.Ticket(
+	id serial primary key,
+	submitter_id integer references Wu.Users(id) not null,
+	size float not null default 0.00,
+	description varchar(400) not null,
+	reviewer_id integer references Wu.Users(id),
+	is_approved boolean
+);
+
+insert into wu.users (first_name, last_name, email, hashPW, is_manager) values
+	('Elyse', 'Lam', 'leesy@gmail.com', '$2y$12$APWSPuE6ymt786K8W0Z78OfF7k2QrU0ZU//SDmKJrCixDyFl1cHpG', true),
+	('David', 'Locanthi', 'dozl@gmail.com', '$2y$12$Um206fneghvPMlZLFxxkI.kpupoEPCgfJfi5es893v7rRemRdqamW', false),
+	('Angel', 'Perez', 'Angelboi7@gmail.com', '$2y$12$bNkBT7IJjSQhKkthNOwNJOCsTfwYUtoTisGTcfOmKNg7y1LL2sWHe', false),
+	('Jessica', 'Gomez', 'smilesmcclown@gmail.com', '$2y$12$hkjjWWLhxX2JWFErgiqsUe73XYGluPwzp7hgPBt7rccoSf6vMSiWm', true),
+	('Henry', 'Dinh', 'dinnaboi@gmail.com', '$2y$12$mXGDRNSDmiZ8N17BuI0f4.3psqoLpA13bnP3mloDZiASVSWWoVFYe', false);
+	
+
+insert into wu.ticket (submitter_id, size, description, reviewer_id, is_approved) values
+	(1, 10000.00, 'I rly need to buy some new clothes', 1, true),
+	(2, 200.00, 'Water is flooding the basement, so I hired a plumber', 1, false),
+	(5, 25, 'My grandmother is starving, please I just need to be able to afford some food for her. $25 for a year', 1, false),
+	(3, 2000, 'My daughter needs a dress for her prom', 4, true),
+	(2, 19.99, 'PAY ME FOR THE FOOD I BOUGHT', null, null);
+
+-------
+create or replace function wu.add_new_user(firstName varchar(30),lastName varchar(30), emailz varchar(50), hashpw varchar(60), isMan boolean)
+returns integer as $$
+    declare
+        in_id integer;
+    begin
+        insert into wu.users (first_name, last_name, email, hashPW, is_manager)
+            values (firstName, lastName, emailz, hashpw, isMan) returning id into in_id;
+        return in_id;
+    end;
+$$ language plpgsql;
+
+create or replace function wu.add_new_ticket(submitID integer, dollaz float, descript varchar(400),reviewID int, isApp boolean)
+returns integer as $$
+    declare
+        in_id integer;
+    begin
+        insert into wu.accounts (submitter_id, size, description, reviewer_id, is_approved)
+            values (submitID, dollaz, descript, reviewID, isApp) returning id into in_id;
+        return in_id;
+    end;
+$$ language plpgsql;
+
+create or replace function wu.find_user_by_last_name(searchy varchar(30))
+returns table(  
+	id integer,
+	first_name VARCHAR(30),
+	last_name VARCHAR(30),
+	email VARCHAR(50),
+	hashpw VARCHAR(60),
+	is_manager boolean
+) as $$
+    begin
+        select * from wu.users where last_name = searchy;
+    end;
+$$ language plpgsql;
+
+create or replace function wu.find_user_by_email(searche varchar(50))
+returns table(  
+	id integer,
+	first_name VARCHAR(30),
+	last_name VARCHAR(30),
+	email VARCHAR(50),
+	hashpw VARCHAR(60),
+	is_manager boolean
+) as $$
+    begin
+        select * from wu.users where email = searche;
+    end;
+$$ language plpgsql;
+
+create or replace function wu.find_user_by_id(searchi integer)
+returns table(  
+	id integer,
+	first_name VARCHAR(30),
+	last_name VARCHAR(30),
+	email VARCHAR(50),
+	hashpw VARCHAR(60),
+	is_manager boolean
+) as $$
+    begin
+        select * from wu.users where id = searchy;
+    end;
+$$ language plpgsql;
+
+create or replace function wu.find_all_users()
+returns table(  
+	id integer,
+	first_name VARCHAR(30),
+	last_name VARCHAR(30),
+	email VARCHAR(50),
+	hashpw VARCHAR(60),
+	is_manager boolean
+) as $$
+    begin
+        select * from wu.users ;
+    end;
+$$ language plpgsql;
+
+create or replace function wu.find_all_tickets_by_submit_id(searchi integer)
+returns table(  
+	id integer,
+	submitter_id integer references Wu.Users(id) not null,
+	size float not null default 0.00,
+	description varchar(400) not null,
+	reviewer_id integer references Wu.Users(id),
+	is_approved boolean
+) as $$
+    begin
+        select * from wu.ticket where id = searchy;
+    end;
+$$ language plpgsql;
