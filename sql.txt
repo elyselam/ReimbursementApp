@@ -1,7 +1,7 @@
 drop table Wu.Users cascade;
 drop table Wu.Ticket cascade;
 
-create table if not exists Wu.Users(
+create table if not exists wu.users(
    id serial primary key,
    first_name VARCHAR(30) not null,
    last_name VARCHAR(30) not null,
@@ -10,12 +10,13 @@ create table if not exists Wu.Users(
    is_manager boolean not null default false
 );
 
-create table if not exists Wu.Ticket(
+create table if not exists wu.ticket(
 	id serial primary key,
-	submitter_id integer references Wu.Users(id) not null,
-	size float not null default 0.00,
+	submitter_id integer references wu.users(id) not null,
+	amount float not null default 0.00,
 	description varchar(400) not null,
-	reviewer_id integer references Wu.Users(id),
+	reviewer_id integer references wu.users(id),
+	is_pending boolean not null,
 	is_approved boolean
 );
 
@@ -27,12 +28,12 @@ insert into wu.users (first_name, last_name, email, hashPW, is_manager) values
 	('Henry', 'Dinh', 'dinnaboi@gmail.com', '$2y$12$mXGDRNSDmiZ8N17BuI0f4.3psqoLpA13bnP3mloDZiASVSWWoVFYe', false);
 	
 
-insert into wu.ticket (submitter_id, size, description, reviewer_id, is_approved) values
-	(1, 10000.00, 'I rly need to buy some new clothes', 1, true),
-	(2, 200.00, 'Water is flooding the basement, so I hired a plumber', 1, false),
-	(5, 25, 'My grandmother is starving, please I just need to be able to afford some food for her. $25 for a year', 1, false),
-	(3, 2000, 'My daughter needs a dress for her prom', 4, true),
-	(2, 19.99, 'PAY ME FOR THE FOOD I BOUGHT', null, null);
+insert into wu.ticket (submitter_id, amount, description, reviewer_id, is_pending, is_approved) values
+	(1, 10000.00, 'I rly need to buy some new clothes', 1, true, true),
+	(2, 200.00, 'Water is flooding the basement, so I hired a plumber', 1, true, false),
+	(5, 25, 'My grandmother is starving, please I just need to be able to afford some food for her. $25 for a year', 1, true,  false),
+	(3, 2000, 'My daughter needs a dress for her prom', 4, true, true),
+	(2, 19.99, 'PAY ME FOR THE FOOD I BOUGHT', null, false, null);
 
 -------
 create or replace function wu.add_new_user(firstName varchar(30),lastName varchar(30), emailz varchar(50), hashpw varchar(60), isMan boolean)
@@ -46,13 +47,13 @@ returns integer as $$
     end;
 $$ language plpgsql;
 
-create or replace function wu.add_new_ticket(submitID integer, dollaz float, descript varchar(400),reviewID int, isApp boolean)
+create or replace function wu.add_new_ticket(submitID integer, dollaz float, descript varchar(400),reviewID int, isPend boolean, isApr boolean)
 returns integer as $$
     declare
         in_id integer;
     begin
-        insert into wu.accounts (submitter_id, size, description, reviewer_id, is_approved)
-            values (submitID, dollaz, descript, reviewID, isApp) returning id into in_id;
+        insert into wu.accounts (submitter_id, amount, description, reviewer_id, is_pending, is_approved)
+            values (submitID, dollaz, descript, reviewID, isPend, isApp) returning id into in_id;
         return in_id;
     end;
 $$ language plpgsql;
@@ -95,7 +96,7 @@ returns table(
 	is_manager boolean
 ) as $$
     begin
-        select * from wu.users where id = searchy;
+        select * from wu.users where id = searchi;
     end;
 $$ language plpgsql;
 
@@ -113,16 +114,66 @@ returns table(
     end;
 $$ language plpgsql;
 
-create or replace function wu.find_all_tickets_by_submit_id(searchi integer)
+create or replace function wu.find_all_tickets_by_submit_id(searchi integer, sort boolean)
 returns table(  
 	id integer,
-	submitter_id integer references Wu.Users(id) not null,
-	size float not null default 0.00,
-	description varchar(400) not null,
-	reviewer_id integer references Wu.Users(id),
+	submitter_id integer,
+	amount float,
+	description varchar,
+	reviewer_id integer,
+	is_pending boolean,
 	is_approved boolean
 ) as $$
     begin
-        select * from wu.ticket where id = searchy;
+        select * from wu.ticket where id=searchy and is_pending=sort ;
+    end;
+$$ language plpgsql;
+
+create or replace function wu.find_all_tickets(sort boolean)
+returns table(  
+	id integer,
+	submitter_id integer,
+	amount float,
+	description varchar(400),
+	reviewer_id integer,
+	is_pending boolean,
+	is_approved boolean
+) as $$
+    begin
+        select * from wu.ticket where is_pending = sort ;
+    end;
+$$ language plpgsql;
+
+create or replace function wu.update_user(uzrID integer, firsNam integer, lasNam varchar(30), emailz varchar(50), hashyhash varchar(60), isMan boolean)
+returns integer as $$
+    begin
+        update wu.users
+            set first_name=firsNam,last_name=lasNam,email=emailz,hashpw=hashyhash,is_manager=isman
+            where id = uzrid;
+    end;
+$$ language plpgsql;
+
+create or replace function wu.update_ticket(tixID integer, submitID int, dollaz int, deysay varchar(400), seener int, fshiz boolean, isdope boolean)
+returns integer as $$
+    begin
+        update wu.ticket
+            set submitter_id=submitID,amount=dollaz,description=deysay,reviewer_id=seener,is_pending=fshiz,is_approved=isdope
+            where id = uzrid;
+    end;
+$$ language plpgsql;
+
+create or replace function wu.delete_user(uzr integer)
+returns integer as $$
+    begin
+        delete from wu.users
+            where id = uzrid;
+    end;
+$$ language plpgsql;
+
+create or replace function wu.delete_ticket(tickID integer)
+returns integer as $$
+    begin
+        delete from wu.users
+            where id = tickID;
     end;
 $$ language plpgsql;

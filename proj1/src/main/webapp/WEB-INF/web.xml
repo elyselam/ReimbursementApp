@@ -3,4 +3,18 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
 		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
+    <!-- servlets are registered in 2 parts
+        first the <servlet> tag and then
+            the <servlet-mapping tag -->
+    <servlet>
+        <servlet-name>Tang</servlet-name>
+        <servlet-class>com.wu.web.WuServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Tang</servlet-name>
+        <url-pattern>/tang/*</url-pattern>
+    </servlet-mapping>
 </web-app>
