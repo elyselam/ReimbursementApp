@@ -7,14 +7,17 @@ public class Ticket {
     private String description;
     private int reviewerID;
     private boolean isApproved;
+    private boolean isPending;
 
-    public Ticket(int ticketID, int submitterID, float cost, String description, int reviewerID, boolean isApproved) {
+    public Ticket(int ticketID, int submitterID, float cost, String description, int reviewerID, boolean isPending, boolean isApproved) {
         this.ticketID = ticketID;
         this.submitterID = submitterID;
         this.cost = cost;
         this.description = description;
         this.reviewerID = reviewerID;
         this.isApproved = isApproved;
+        this.isPending = isPending;
+
     }
 
     public int getTicketID() {
@@ -63,5 +66,13 @@ public class Ticket {
 
     public void setApproved(boolean approved) {
         isApproved = approved;
+    }
+
+    public boolean isPending() {
+        return isPending;
+    }
+
+    public void setPending(boolean pending) {
+        isPending = pending;
     }
 }

@@ -1,12 +1,21 @@
 package com.wu.app.model;
 
 public class User {
+    private int employeeID;
     private String firstName;
     private String lastName;
     private String email;
     private String hashedPassword;
-    private int employeeID;
     private boolean isManager;
+
+    public User(int employeeID, String firstName, String lastName, String email, String hashedPassword, boolean isManager) {
+        this.employeeID = employeeID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.hashedPassword = hashedPassword;
+        this.isManager = isManager;
+    }
 
     public String getFirstName() {
         return firstName;
