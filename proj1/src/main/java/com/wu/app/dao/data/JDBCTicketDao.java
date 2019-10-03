@@ -136,7 +136,7 @@ public class JDBCTicketDao implements TicketRepository {
     public Integer add(Ticket obj) {
         Connection c = null;
         if(obj != null && obj.getTicketID() != 0) {
-             String sql = "{ ? call wu.add_new_ticket(?, ?, ?, ?, ?, ?) }";
+             String sql = "{ ? = call wu.add_new_ticket(?, ?, ?, ?, ?, ?) }";
 
             LOG.info("Executing statement \n " + sql);
 
@@ -239,12 +239,12 @@ public class JDBCTicketDao implements TicketRepository {
         if (targetID != 0) {
 
             // never saved 'insert'
-            String sql = "{ call wu.find_all_tickets_by_submit_id(?) } = ?";
+            String sql = "{ call wu.find_all_tickets_by_submit_id(?) }";
 
             LOG.info("Executing statement \n " + sql);
             try {
                 c = cMan.getConnection();
-                PreparedStatement statement = c.prepareStatement(sql);
+                PreparedStatement statement = c.prepareCall(sql);
                 statement.setInt(1, targetID);
 
                 ResultSet results = statement.executeQuery();
@@ -305,12 +305,12 @@ public class JDBCTicketDao implements TicketRepository {
   //      if (targetID != 0) {
 
             // never saved 'insert'
-            String sql = "{ call wu.find_all_tickets_sort(?) } = ?";
+            String sql = "{ call wu.find_all_tickets_sort(?) }";
 
             LOG.info("Executing statement \n " + sql);
             try {
                 c = cMan.getConnection();
-                PreparedStatement statement = c.prepareStatement(sql);
+                PreparedStatement statement = c.prepareCall(sql);
                 statement.setBoolean(1, ticketStatus);
 
                 ResultSet results = statement.executeQuery();
@@ -371,12 +371,12 @@ public class JDBCTicketDao implements TicketRepository {
         //      if (targetID != 0) {
 
         // never saved 'insert'
-        String sql = "{ call wu.find_all_tickets_pend() } = ?";
+        String sql = "{ call wu.find_all_tickets_pend() }";
 
         LOG.info("Executing statement \n " + sql);
         try {
             c = cMan.getConnection();
-            PreparedStatement statement = c.prepareStatement(sql);
+            PreparedStatement statement = c.prepareCall(sql);
 
             ResultSet results = statement.executeQuery();
 

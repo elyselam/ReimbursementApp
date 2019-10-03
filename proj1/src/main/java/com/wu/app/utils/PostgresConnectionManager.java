@@ -18,7 +18,7 @@ public class PostgresConnectionManager  implements ConnectionManager {
     public static final String SQL_DAO_PASSWORD = "DB_PASSWORD";
     public static final String SQL_DAO_URL = "DB_URL";
 
-    private Properties propz;
+    private Properties propz = new Properties();
 
     static {
         try {

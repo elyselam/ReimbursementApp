@@ -209,9 +209,9 @@ public class JDBCUserDao implements UserRepository {
 
     @Override
     public User update(User obj) {
-        Connection c = null;
+        Connection c = null; //IMPLEMENT BCRYPT FOR PASSWORD
         if(obj != null) {
-            String sql = "{ ? call wu.update_user(?, ?, ?, ?, ?) }";
+            String sql = "{ ? = call wu.update_user( ?, ?, ?, ?, ?) }";
 
             LOG.info("Executing statement \n " + sql);
 
@@ -219,8 +219,7 @@ public class JDBCUserDao implements UserRepository {
                 int out_id;
                 c = cMan.getConnection();
                 CallableStatement statement = c.prepareCall(sql);
-                statement.registerOutParameter(1, Types.INTEGER);
-
+                statement.setInt(1, Types.INTEGER);
                 statement.setString(2, obj.getFirstName());
                 statement.setString(3, obj.getFirstName());
                 statement.setString(4, obj.getEmail());
@@ -262,9 +261,9 @@ public class JDBCUserDao implements UserRepository {
 
     @Override
     public Integer add(User obj) {
-        Connection c = null;
+        Connection c = null; //Implement bcrypt for passwords
         if(obj != null) {
-            String sql = "{ ? call wu.add_new_user(?, ?, ?, ?, ?) }";
+            String sql = "{ ? = call wu.add_new_user(?, ?, ?, ?, ?) }";
 
             LOG.info("Executing statement \n " + sql);
 
@@ -275,7 +274,7 @@ public class JDBCUserDao implements UserRepository {
                 statement.registerOutParameter(1, Types.INTEGER);
 
                 statement.setString(2, obj.getFirstName());
-                statement.setString(3, obj.getFirstName());
+                statement.setString(3, obj.getLastName());
                 statement.setString(4, obj.getEmail());
                 statement.setString(5, obj.getHashedPassword());
                 statement.setBoolean(6,obj.isManager());
