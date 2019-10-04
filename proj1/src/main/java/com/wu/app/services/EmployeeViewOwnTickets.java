@@ -13,7 +13,7 @@ public class EmployeeViewOwnTickets {
     }
 
     public ArrayList<Ticket> doService(int yoNumba) {
-        if (yoNumba >= 0) {
+        if (yoNumba > 0) {
             ArrayList<Ticket> gottem = new ArrayList<>();
             gottem = tRepo.findAllByEmployeeIDCanSort(yoNumba);
             if (gottem.get(0) == null) {
