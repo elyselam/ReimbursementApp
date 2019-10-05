@@ -19,7 +19,9 @@ public class Ticket {
         this.isPending = isPending;
 
     }
-
+    public Ticket(){
+        //no arg constructor
+    }
     public int getTicketID() {
         return ticketID;
     }

@@ -9,7 +9,7 @@ public class Navigator {
 
     public static String navigate(HttpServletRequest req, HttpServletResponse res){
         switch(req.getRequestURI()) {
-            case "/LoginService.do":
+            case "/webapp/.do":
                 return LoginActions.login(req);
             case "/submitTicket.do":
                 return EmployeeActions.submitTicket(req);
