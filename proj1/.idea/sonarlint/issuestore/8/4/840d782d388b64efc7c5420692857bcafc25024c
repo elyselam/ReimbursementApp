@@ -1,2 +1,4 @@
 
-^squid:S2094"BRemove this empty class, write its code or make it an "interface".(ΐΟ±ψÿÿÿÿ
+]squid:S1854":Remove this useless assignment to local variable "gottem".(ςΉ―ξϊÿÿÿÿ8·£Ω-
+squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ό΄“8σήªΩ-
+wsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ψ­Μ8·£Ω-
