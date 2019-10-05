@@ -53,3 +53,15 @@ k
 ;src/main/java/com/wu/app/services/EmployeeSubmitTicket.java,9\0\905e30fb374e077dc9a406543933e483002f2af2
 p
 @src/main/test/java/test/services/EmployeeViewOwnTicketsTest.java,b\e\be899361189777ffb2c03ad1b54524ba865f1457
+q
+Asrc/main/test/java/test/services/ManagerExamineEmployeeTests.java,3\8\3825c417a56a0077234463510850fc74be2dceed
+r
+Bsrc/main/test/java/test/services/ManagerRegisterEmployeeTests.java,7\7\776ad8fb7a86a2d2f9b6c538015d2126245cf700
+p
+@src/main/test/java/test/services/ManagerViewAllEmployeeTest.java,3\f\3fb4afe68d43ae43f059781842891c0628fc42d6
+g
+7src/main/test/java/test/services/LoginServiceTests.java,e\d\ed3e106f9836434b1ac94424f4de995e95f680a3
+m
+=src/main/test/java/test/services/EmployeeUpdateInfoTests.java,d\1\d1116fd791bf418889eaa0b49f18bae96d07eac9
+[
++src/main/java/com/wu/web/ContextLoader.java,d\e\de266b8e674f959dca71206ffcc41cbeb7b5ed21

@@ -1,2 +1,2 @@
 
-^squid:S2094"BRemove this empty class, write its code or make it an "interface".(•ôĞ°ÿÿÿÿÿ
+“squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÄÒÀùÿÿÿÿ8Ïö–¢Ù-
