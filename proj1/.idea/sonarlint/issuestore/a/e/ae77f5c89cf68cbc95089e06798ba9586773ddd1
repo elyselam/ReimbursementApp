@@ -1,7 +1,0 @@
-
-qsquid:S1450"SRemove the "conn" field and declare it as a local variable in the relevant methods.(Â™À„8³¢¤÷Ø-
-[squid:S1854E"8Remove this useless assignment to local variable "pplz".(ÏÔéÿþÿÿÿÿ8…«–øØ-
-Fsquid:S1148""#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8³¢¤÷Ø-
-zsquid:UselessImportCheck"JRemove this unused import 'com.fasterxml.jackson.annotation.JsonTypeInfo'.(Ç†ó¹üÿÿÿÿ8ˆ›ŸøØ-
-V
-squid:S106?"9Replace this use of System.out or System.err by a logger.(Ä¤çÈ8Í°‘øØ-

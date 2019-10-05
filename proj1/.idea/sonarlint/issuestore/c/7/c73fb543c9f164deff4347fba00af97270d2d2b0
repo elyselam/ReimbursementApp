@@ -1,49 +1,0 @@
-
-nsquid:S1192-"KDefine a constant instead of duplicating this literal "is_manager" 3 times.(ßÍÜßıÿÿÿÿ8µİÑåØ-
-Bsquid:S1148"#Use a logger to log this exception.(Ç’Çê8¦´ÍåØ-
-Bsquid:S1148É"#Use a logger to log this exception.(Ç’Çê8ù§³åØ-
-esquid:S3457"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šıÿÿÿÿ8ù§³åØ-
-msquid:S1192*"JDefine a constant instead of duplicating this literal "last_name" 3 times.(ğÊ™±ùÿÿÿÿ8µİÑåØ-
-esquid:S3457À"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šıÿÿÿÿ8àÚ›½Ø-
-Gsquid:S1148ö"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¥Ñ¨åØ-
-Fsquid:S1148C"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8µİÑåØ-
-esquid:S3457Ø"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šıÿÿÿÿ8¥Ñ¨åØ-
-fsquid:S00116"NRename this field "LOG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àëÑÑ
-Osquid:S1481Ã"+Remove this unused "out_id" local variable.(Õ¡Êëúÿÿÿÿ8àÚ›½Ø-
-Zsquid:S2629a"7Use the built-in formatting to construct this argument.(ÇŒ…Šıÿÿÿÿ8¦´ÍåØ-
-ssquid:S2095İ"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(õéÌãùÿÿÿÿ8¥Ñ¨åØ-
-_squid:UselessImportCheck"4Remove this unused import 'com.wu.app.model.Ticket'.(Œ¥—8·ÂåØ-
-[squid:S2629"7Use the built-in formatting to construct this argument.(ÇŒ…Šıÿÿÿÿ8ù§³åØ-
-dsquid:S1192+"FDefine a constant instead of duplicating this literal "email" 3 times.(ãÎë£8µİÑåØ-
-esquid:S2095$"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(‹èäŒ8µİÑåØ-
-Gsquid:S1148†"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦´ÍåØ-
-esquid:S3457Œ"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šıÿÿÿÿ8ÕÇ¬½Ø-
-dsquid:S3457a"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šıÿÿÿÿ8¦´ÍåØ-
-Csquid:S1168‘"+Return an empty collection instead of null.(¥¹ï
-Bsquid:S1148ı"#Use a logger to log this exception.(Ç’Çê8¥Ñ¨åØ-
-msquid:S2095d"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(³­Ì8¦´ÍåØ-
-vsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ¡Êëúÿÿÿÿ8ÕÇ¬½Ø-
-dsquid:S3457"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šıÿÿÿÿ8µİÑåØ-
-isquid:S1192)"KDefine a constant instead of duplicating this literal "first_name" 3 times.(£Ã¨ò8µİÑåØ-
-msquid:S2095!"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(³­Ì8µİÑåØ-
-jsquid:S1192,"GDefine a constant instead of duplicating this literal "hashPW" 3 times.(ºËË’ûÿÿÿÿ8µİÑåØ-
-vsquid:S00117Û"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ¡Êëúÿÿÿÿ8¥Ñ¨åØ-
-ssquid:S2095Å"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(õéÌãùÿÿÿÿ8àÚ›½Ø-
-ssquid:S2095‘"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(õéÌãùÿÿÿÿ8ÕÇ¬½Ø-
-:squid:S3626Ò"Remove this redundant jump.(ûÁİ…8àÚ›½Ø-
-Gsquid:S1148×"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8àÚ›½Ø-
-Bsquid:S1148Ş"#Use a logger to log this exception.(Ç’Çê8àÚ›½Ø-
-Asquid:S1148J"#Use a logger to log this exception.(Ç’Çê8µİÑåØ-
-{squid:S1192"XDefine a constant instead of duplicating this literal "Executing statement \n " 6 times.(ÇŒ…Šıÿÿÿÿ8¥Ñ¨åØ-
-[squid:S2629À"7Use the built-in formatting to construct this argument.(ÇŒ…Šıÿÿÿÿ8àÚ›½Ø-
-Gsquid:S1148Â"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ù§³åØ-
-Bsquid:S1148±"#Use a logger to log this exception.(Ç’Çê8ÕÇ¬½Ø-
-[squid:S2629Œ"7Use the built-in formatting to construct this argument.(ÇŒ…Šıÿÿÿÿ8ÕÇ¬½Ø-
-esquid:S2095f"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(‹èäŒ8¦´ÍåØ-
-Zsquid:S2629"7Use the built-in formatting to construct this argument.(ÇŒ…Šıÿÿÿÿ8µİÑåØ-
-fsquid:S2095£"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(‹èäŒ8ù§³åØ-
-nsquid:S2095 "OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(³­Ì8ù§³åØ-
-vsquid:S00117Ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ¡Êëúÿÿÿÿ8àÚ›½Ø-
-Gsquid:S1148ª"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÕÇ¬½Ø-
-[squid:S2629Ø"7Use the built-in formatting to construct this argument.(ÇŒ…Šıÿÿÿÿ8¥Ñ¨åØ-
-:squid:S3626ä"Remove this redundant jump.(ûÁİ…8àÚ›½Ø-
