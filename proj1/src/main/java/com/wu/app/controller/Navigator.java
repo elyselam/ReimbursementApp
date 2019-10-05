@@ -9,24 +9,24 @@ public class Navigator {
 
     public static String navigate(HttpServletRequest req, HttpServletResponse res){
         switch(req.getRequestURI()) {
-            case "/webapp/.do":
-                return LoginActions.login(req);
-            case "/submitTicket.do":
-                return EmployeeActions.submitTicket(req);
-            case "/updateInfo.do":
-                return EmployeeActions.updateInfo(req,res);
-            case "/empViewTickets.do":
-                return EmployeeActions.viewTickets(req, res);
-            case "/managerViewAll.do":
-                return ManagerActions.managerViewAll(req,res);
-            case "/managerViewAllPending.do":
-                return ManagerActions.viewAllPending(req,res);
-            case "/managerViewAllResolved.do":
-                return ManagerActions.viewAllResolved(req, res);
-            case "/managerExamineEmployee.do":
-                return ManagerActions.examineEmployee(req, res);
-            case "/managerRegisterEmployee.do":
-                return ManagerActions.RegisterEmployee(req);
+            case "/Login.do":
+                return LoginActions.Login(req);
+//            case "/submitTicket.do":
+//                return EmployeeActions.submitTicket(req);
+//            case "/updateInfo.do":
+//                return EmployeeActions.updateInfo(req,res);
+//            case "/empViewTickets.do":
+//                return EmployeeActions.viewTickets(req, res);
+//            case "/managerViewAll.do":
+//                return ManagerActions.managerViewAll(req,res);
+//            case "/managerViewAllPending.do":
+//                return ManagerActions.viewAllPending(req,res);
+//            case "/managerViewAllResolved.do":
+//                return ManagerActions.viewAllResolved(req, res);
+//            case "/managerExamineEmployee.do":
+//                return ManagerActions.examineEmployee(req, res);
+//            case "/managerRegisterEmployee.do":
+//                return ManagerActions.RegisterEmployee(req);
             default:
                 return "/Login.html";
         }
