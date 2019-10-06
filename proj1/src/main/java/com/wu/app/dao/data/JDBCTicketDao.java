@@ -135,13 +135,13 @@ public class JDBCTicketDao implements TicketRepository {
     @Override
     public Integer add(Ticket obj) {
         Connection c = null;
-        if(obj != null && obj.getTicketID() != 0) {
-             String sql = "{ ? = call wu.add_new_ticket(?, ?, ?, ?, ?, ?) }";
+        if(obj != null) {
+             String sql = "{ ? = call wu.add_new_ticket(?, ?, ?, ?, ?) }";
 
             LOG.info("Executing statement \n " + sql);
 
             try {
-                int out_id;
+                Integer out_id;
                 c = cMan.getConnection();
                 CallableStatement statement = c.prepareCall(sql);
                 statement.registerOutParameter(1, Types.INTEGER);
@@ -149,9 +149,8 @@ public class JDBCTicketDao implements TicketRepository {
                 statement.setInt(2, obj.getSubmitterID());
                 statement.setFloat(3, obj.getCost());
                 statement.setString(4, obj.getDescription());
-                statement.setInt(5, obj.getReviewerID());
-                statement.setBoolean(6,obj.isPending());
-                statement.setBoolean(7,obj.isApproved());
+                statement.setBoolean(5,obj.isPending());
+                statement.setBoolean(6,obj.isApproved());
 
                 // turn off auto-commit
                 // we want to control the transaction

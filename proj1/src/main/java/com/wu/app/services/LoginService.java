@@ -19,9 +19,11 @@ public class LoginService {
         if (authMe.getEmail() == null) {return failed;}
         if (authMe.getHashedPassword() == null) {return failed;}
 
-        User usey = uRepo.findByID(authMe.getEmployeeID());
-        if (usey.equals(authMe)) { return usey;} //BCRYPT MIGHT CAUSE PROBLEMS
 
-        return null;
+
+        User usey = uRepo.findByEmail(authMe.getEmail());
+
+        return usey; //BCRYPT MIGHT CAUSE PROBLEMS
+
     }
 }

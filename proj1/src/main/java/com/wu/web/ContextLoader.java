@@ -1,5 +1,6 @@
 package com.wu.web;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wu.app.dao.TicketRepository;
 import com.wu.app.dao.UserRepository;
 import com.wu.app.dao.data.JDBCTicketDao;
@@ -7,7 +8,6 @@ import com.wu.app.dao.data.JDBCUserDao;
 import com.wu.app.services.*;
 import com.wu.app.utils.ConnectionManager;
 import com.wu.app.utils.PostgresConnectionManager;
-import sun.rmi.runtime.Log;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -27,16 +27,9 @@ public class ContextLoader implements ServletContextListener {
 
             Properties propz = new Properties();
 
-            String fileName = ClassLoader
-                    .getSystemClassLoader().getResource("test.properties") //HARDCODED PROPERTIES FILE
-                    .getFile();
-
-            try {
-                propz.load(new FileReader(fileName));
-            } catch (
-                    IOException e) {
-                e.printStackTrace();
-            }
+            propz.setProperty("SQL_DAO_URL","jdbc:postgresql://dongler.cpwa0rht5vnt.us-east-1.rds.amazonaws.com:5432/dingledongle");
+            propz.setProperty("SQL_DAO_USERNAME","dozl");
+            propz.setProperty("SQL_DAO_PASSWORD","hungryhippos");
 
             ConnectionManager manager = new PostgresConnectionManager(propz);
 
@@ -63,6 +56,8 @@ public class ContextLoader implements ServletContextListener {
             ManagerViewAllResolved managerViewAllResolved =
                     new ManagerViewAllResolved(ticketRepo);
 
+            ObjectMapper obMap = new ObjectMapper();
+
             sc.setAttribute("submitTicketServ", submitTicket);
             sc.setAttribute("updateInfoServ", updateInfo);
             sc.setAttribute("employeeViewOwnTicketsServ", employeeViewOwnTickets);
@@ -72,7 +67,7 @@ public class ContextLoader implements ServletContextListener {
             sc.setAttribute("managerViewAllEmployeeServ", managerViewAllEmployee);
             sc.setAttribute("managerViewAllPendingServ", managerViewAllPending);
             sc.setAttribute("managerViewAllResolvedServ", managerViewAllResolved);
-
+            sc.setAttribute("obMap", obMap);
 
         }
 

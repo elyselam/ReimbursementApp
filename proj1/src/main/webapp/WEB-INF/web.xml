@@ -7,6 +7,16 @@
     <!-- servlets are registered in 2 parts
         first the <servlet> tag and then
             the <servlet-mapping tag -->
+    <listener>
+        <listener-class>com.wu.web.ContextLoader</listener-class>
+    </listener>
+
+
+    <context-param>
+        <param-name>ApplicationName</param-name>
+        <param-value>Wu-Tang</param-value>
+    </context-param>
+
     <servlet>
         <servlet-name>Tang</servlet-name>
         <servlet-class>com.wu.web.MainServlet</servlet-class>
@@ -15,6 +25,6 @@
 
     <servlet-mapping>
         <servlet-name>Tang</servlet-name>
-        <url-pattern>*.do*</url-pattern>
+        <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 </web-app>

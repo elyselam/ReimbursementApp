@@ -1,7 +1,0 @@
-
-ysquid:S1450"VRemove the "service" field and declare it as a local variable in the relevant methods.(‚¾·…úÿÿÿÿ8›æ¢Ù-
-xsquid:UselessImportCheck"HRemove this unused import 'com.wu.app.services.ManagerRegisterEmployee'.(ĞË¯ÿÿÿÿÿ8ÎÃƒ¢Ù-
-Fsquid:S1068"(Remove this unused "usey" private field.(èşÍ8›æ¢Ù-
-qsquid:S1450"SRemove the "usey" field and declare it as a local variable in the relevant methods.(èşÍ8›æ¢Ù-
-vsquid:S1450"XRemove the "mockURepo" field and declare it as a local variable in the relevant methods.(ğµ“8›æ¢Ù-
-Nsquid:S1068"+Remove this unused "service" private field.(‚¾·…úÿÿÿÿ8›æ¢Ù-
