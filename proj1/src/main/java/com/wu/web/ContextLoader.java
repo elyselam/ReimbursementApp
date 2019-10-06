@@ -1,5 +1,6 @@
 package com.wu.web;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wu.app.dao.TicketRepository;
 import com.wu.app.dao.UserRepository;
 import com.wu.app.dao.data.JDBCTicketDao;
@@ -63,6 +64,8 @@ public class ContextLoader implements ServletContextListener {
             ManagerViewAllResolved managerViewAllResolved =
                     new ManagerViewAllResolved(ticketRepo);
 
+            ObjectMapper obMap = new ObjectMapper();
+
             sc.setAttribute("submitTicketServ", submitTicket);
             sc.setAttribute("updateInfoServ", updateInfo);
             sc.setAttribute("employeeViewOwnTicketsServ", employeeViewOwnTickets);
@@ -72,7 +75,7 @@ public class ContextLoader implements ServletContextListener {
             sc.setAttribute("managerViewAllEmployeeServ", managerViewAllEmployee);
             sc.setAttribute("managerViewAllPendingServ", managerViewAllPending);
             sc.setAttribute("managerViewAllResolvedServ", managerViewAllResolved);
-
+            sc.setAttribute("obMap", obMap);
 
         }
 
