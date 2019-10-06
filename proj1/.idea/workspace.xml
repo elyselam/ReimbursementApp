@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f8107a43-9d69-4c89-a38c-19b611614a72" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Project_Zero_Actual/logs/logfile.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p_1_backend/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p_1_backend/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p_1_backend/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p_1_backend/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p_1_backend/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p_1_backend/p_1_backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p_1_backend/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p_1_backend/src/main/resources/app.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p_1_backend/src/test/java/test/dao/TicketDaoTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p_1_backend/src/test/java/test/dao/UserDaoTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/proj_1_redux_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/proj_1_redux_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mindrot_jbcrypt_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_23_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.annotation.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.ejb.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.jms.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.persistence.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.resource.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.servlet.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.servlet.jsp.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.transaction.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proj_1_redux.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/controller/EmployeeActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wu/app/controller/EmployeeActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/controller/LoginActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wu/app/controller/LoginActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/controller/ManagerActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wu/app/controller/ManagerActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/controller/Navigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/wu/app/controller/Navigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/dao/Repository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/dao/TicketRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/dao/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/dao/data/JDBCTicketDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/dao/data/JDBCUserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/services/EmployeeSubmitTicket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/services/EmployeeUpdateInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/services/EmployeeViewOwnTickets.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/services/LoginService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/services/ManagerExamineEmployee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/services/ManagerRegisterEmployee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/services/ManagerViewAllEmployee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/services/ManagerViewAllPending.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/services/ManagerViewAllResolved.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/utils/ConnectionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/app/utils/PostgresConnectionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/web/ContextLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/web/MainServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/wu/web/WuServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/resources/test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/test/dao/TicketDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/test/dao/UserDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/test/services/EmployeeSubmitTicketTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/test/services/EmployeeUpdateInfoTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/test/services/EmployeeViewOwnTicketsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/test/services/LoginServiceTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/test/services/ManagerExamineEmployeeTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/test/services/ManagerRegisterEmployeeTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/test/services/ManagerViewAllEmployeeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/resources/test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/dao/Repository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/dao/TicketRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/dao/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/dao/data/JDBCTicketDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/dao/data/JDBCUserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/services/EmployeeSubmitTicket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/services/EmployeeUpdateInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/services/EmployeeViewOwnTickets.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/services/LoginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/services/ManagerExamineEmployee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/services/ManagerRegisterEmployee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/services/ManagerViewAllEmployee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/services/ManagerViewAllPending.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/services/ManagerViewAllResolved.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/utils/ConnectionManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/app/utils/PostgresConnectionManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/wu/web/WuServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj_1_redux/src/main/java/com/wu/app/dao/Repository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj_1_redux/src/main/java/com/wu/app/dao/TicketRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj_1_redux/src/main/java/com/wu/app/dao/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj_1_redux/src/main/java/com/wu/app/dao/data/JDBCTicketDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj_1_redux/src/main/java/com/wu/app/dao/data/JDBCUserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj_1_redux/src/main/java/com/wu/app/model/Ticket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj_1_redux/src/main/java/com/wu/app/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj_1_redux/src/main/java/com/wu/app/utils/ConnectionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj_1_redux/src/main/java/com/wu/app/utils/PostgresConnectionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sql.txt" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1Ro7nrAuCqACKAG49IX2h5sGBQe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f8107a43-9d69-4c89-a38c-19b611614a72" name="Default Changelist" comment="" />
+      <created>1570321764659</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570321764659</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

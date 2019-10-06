@@ -1,0 +1,2 @@
+INFO  | data.JDBCUserDao (JDBCUserDao.java:157) - Executing statement 
+ SELECT * from wu.users where id = ?

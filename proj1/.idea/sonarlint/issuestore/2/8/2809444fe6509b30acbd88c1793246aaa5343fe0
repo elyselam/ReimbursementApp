@@ -1,0 +1,6 @@
+
+`squid:UselessImportCheck"<Remove this unused import 'com.wu.app.dao.data.JDBCUserDao'.(›ð»–
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(à½·Âþÿÿÿÿ
+Tsquid:S2589"8Remove this expression which always evaluates to "false"(Ìµó«þÿÿÿÿ
+csquid:UselessImportCheck":Remove this unused import 'com.wu.app.dao.UserRepository'.(µÂôãüÿÿÿÿ
+Psquid:S1118":Add a private constructor to hide the implicit public one.(ÅóçV

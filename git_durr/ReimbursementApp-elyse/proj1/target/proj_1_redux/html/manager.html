@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jumbotron" style="text-align: center;">
+        <div class="form-group col-lg-6" style="display:inline-block;">
+            <input class="form-control" placeholder='Search by ID' type="text" id='search-input'>
+            <button class="btn btn-success" id="search-btn">Search</button>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" id="pendingBtn">See Pending</button>
+            <button class="btn btn-primary" onclick="alert('This button dont do nothin')">See Resolved</button>
+
+        </div>
+    </div>
+
+    <table class='table bordered-table'>
+        <thead>
+            <th>ID</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Approved</th>
+            <th>Action</th>
+            <th>Submit</th>
+        </thead>
+        <tbody id='table'></tbody>
+    </table>
+    
+    <script src='manager.js'></script>
+</body>
+</html>
