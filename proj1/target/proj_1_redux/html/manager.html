@@ -15,23 +15,21 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary" id="pendingBtn">See Pending</button>
-            <button class="btn btn-primary" onclick="alert('This button dont do nothin')">See Resolved</button>
+            <button class="btn btn-primary" id="resolvedBtn">See Resolved</button>
 
         </div>
     </div>
 
-    <table class='table bordered-table'>
-        <thead>
-            <th>ID</th>
-            <th>Amount</th>
-            <th>Description</th>
-            <th>Approved</th>
-            <th>Action</th>
-            <th>Submit</th>
-        </thead>
-        <tbody id='table'></tbody>
+    <table id="wutang" class="table bordered-table">
+
     </table>
-    
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.3.0/json2html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.json2html/1.2.0/jquery.json2html.min.js"></script>
+
     <script src='../js/manager.js'></script>
 </body>
 </html>

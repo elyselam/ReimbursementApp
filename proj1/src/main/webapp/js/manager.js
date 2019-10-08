@@ -1,98 +1,108 @@
-let tickets = [
-    {
-        id: 1,
-        amount: 1000,
-        description: 'I traveled',
-        isApproved: false
-    },
-    {
-        id: 2,
-        amount: 20000,
-        description: 'I ate out',
-        isApproved: false
-    },
-    {
-        id: 3,
-        amount:23000,
-        description: 'I worked a lot',
-        isApproved: true
-    }
-
-];
+// let tickets = [
+//     {
+//         id: 1,
+//         amount: 1000,
+//         description: 'I traveled',
+//         isApproved: false
+//     },
+//     {
+//         id: 2,
+//         amount: 20000,
+//         description: 'I ate out',
+//         isApproved: false
+//     },
+//     {
+//         id: 3,
+//         amount:23000,
+//         description: 'I worked a lot',
+//         isApproved: true
+//     }
+//
+// ];
 window.onload = function() {
     //fetch 'GET' tickets
 
-
-    
-
-    this.fillTable(tickets);
-
     //search listener
-    let searchInput = document.querySelector('#search-input');
     let searchBtn = document.querySelector('#search-btn');
     searchBtn.addEventListener('click', function(){
-        let found = searchTickets(tickets);
-        fillTable(found);
-        
-    })
+       getSearchTix();
+
+    });
 
     //click listener to show pending ticks
     let pendingBtn = document.querySelector('#pendingBtn');
     pendingBtn.addEventListener('click', function(){
-    showPending(tickets)
-});
+        getPending();
+    });
+
+    let resolvedBtn = document.querySelector('#resolvedBtn');
+    resolvedBtn.addEventListener('click', function(){
+        getResolved();
+    });
 
 }
 
 
 
 
-/* Grab the table from the DOM*/
-let table = document.querySelector('#table');
+// /* Grab the table from the DOM*/
+// let table = document.querySelector('#table');
 
-/* A function for filling the table with tickets */
-function fillTable(reimbs){
-    table.innerHTML = "";
+function getPending() {
+    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/managerViewAllPending.do')
+        .then(response => response.json())
+            .then(tickets => {makePendTable(tickets)})
+}
 
-    for(let tick of reimbs){
-        let row = table.insertRow(0)
-    let col1 = row.insertCell(0);
-    let col2 = row.insertCell(1);
-    let col3 = row.insertCell(2);
-    let col4 = row.insertCell(3);
-    let col5 = row.insertCell(4);
-    let col6 = row.insertCell(5);
-    col1.innerHTML = tick.id;
-    col2.innerHTML = tick.amount;
-    col3.innerHTML = tick.description;
-    col4.innerHTML = tick.isApproved;
+function getResolved() {
+    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/managerViewAllResolved.do')
+        .then(response => response.json())
+        .then(tickets => {makeResTable(tickets)})
+}
 
-    /* SubmitBtn and options will add HTML elements to the last two columns of the table. 
-        Every submit button has onclick=resolve(tick.id) so that when clicked, resolve will be called on the clicked ticket
+function makePendTable(reimbs){
 
-    */
-    let submitBtn = `<button class='btn btn-primary' class='resolve-btn' onclick="resolve(${tick.id})"> Submit </button>`;
-   
-    let options = `<select id='newStatus-${tick.id}'>
-                    <option value='approve' selected> Approve </option>
-                    <option value='deny'> Deny </option> 
-                    </select>`;
-    col5.innerHTML = options;
-    col6.innerHTML = submitBtn;
-
+    $("#wutang").replaceWith("<table id='wutang'>")
+    $("#wutang").append(`<tr> 
+        <th>Ticket ID</th>
+        <th>Submitter ID</th>
+        <th>Cost Size</th>
+        <th>Description</th>
+        <th>Take Action?</th>
+    </tr>`)
+    for(let i = 0; i<reimbs.length; i++){
+        $("#wutang").append(`<tr>
+                <td>${reimbs[i].ticketID} </td>
+                <td>${reimbs[i].submitterID} </td>
+                <td>${reimbs[i].cost} </td>
+                <td>${reimbs[i].description} </td> 
+                <td> <button (click)="approveTik(${reimbs[i].ticketID, true}"> Approve </button></td>
+                <td> <button (click)="approveTik(${reimbs[i].ticketID, false}"> Deny </button></td>
+         </tr>`);
     }
 }
 
-/* this filters the tickets by pending status*/
-function showPending(reimbs){
-    let pending = [];
-    for(let tick of reimbs){
-        if(tick.isApproved == false){
-            pending.push(tick);
-        }
-    }
+function makeResTable(reimbs){
 
-    fillTable(pending);
+    $("#wutang").replaceWith("<table id='wutang'>")
+    $("#wutang").append(`<tr> 
+        <th>Ticket ID</th>
+        <th>Submitter ID</th>
+        <th>Cost Size</th>
+        <th>Description</th>
+        <th>Reviewer ID</th>
+        <th>Resolution</th>
+    </tr>`)
+    for(let i = 0; i<reimbs.length; i++){
+        $("#wutang").append(`<tr>
+                <td>${reimbs[i].ticketID} </td>
+                <td>${reimbs[i].submitterID} </td>
+                <td>${reimbs[i].cost} </td>
+                <td>${reimbs[i].description} </td> 
+                <td>${reimbs[i].reviewerID} </button></td>
+                <td>${reimbs[i].approved} </td>
+         </tr>`);
+    }
 }
 
 /* this filters by approved status */

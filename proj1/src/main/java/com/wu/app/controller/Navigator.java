@@ -9,26 +9,27 @@ public class Navigator {
 
     public static String navigate(HttpServletRequest req, HttpServletResponse res){
         switch(req.getRequestURI()) {
-            case "/proj_1_redux_war_exploded/tang/Login.do":
+            case "/proj_1_redux_war_exploded/html/Login.do":
                 return LoginActions.login(req, res);
-            case "/proj_1_redux_war_exploded/tang/submitTicket.do":
+            case "/proj_1_redux_war_exploded/html/submitTicket.do":
                 return EmployeeActions.submitTicket(req, res);
-            case "/proj_1_redux_war_exploded/tang/updateInfo.do":
+            case "/proj_1_redux_war_exploded/html/updateInfo.do":
                 return EmployeeActions.updateInfo(req,res);
-            case "/proj_1_redux_war_exploded/tang/empViewTickets.do":
+            case "/proj_1_redux_war_exploded/html/empViewTickets.do":
                 return EmployeeActions.viewTickets(req, res);
-            case "/proj_1_redux_war_exploded/tang/managerViewAll.do":
+            case "/proj_1_redux_war_exploded/html/managerViewAll.do":
                 return ManagerActions.managerViewAllEmployee(req,res);
-            case "/proj_1_redux_war_exploded/tang/managerViewAllPending.do":
+            case "/proj_1_redux_war_exploded/html/managerViewAllPending.do":
                 return ManagerActions.viewAllPending(req,res);
-            case "/proj_1_redux_war_exploded/tang/managerViewAllResolved.do":
+            case "/proj_1_redux_war_exploded/html/managerViewAllResolved.do":
                 return ManagerActions.viewAllResolved(req, res);
-            case "/proj_1_redux_war_exploded/tang/managerExamineEmployee.do":
+            case "/proj_1_redux_war_exploded/html/managerExamineEmployee.do":
                 return ManagerActions.examineEmployee(req, res);
-            case "/proj_1_redux_war_exploded/tang/managerRegisterEmployee.do":
+            case "/proj_1_redux_war_exploded/html/managerRegisterEmployee.do":
                 return ManagerActions.RegisterEmployee(req, res);
             default:
-                return "/Login.html";
+                System.out.println(req.getRequestURI());
+                return "html/Login.html";
         }
     }
 

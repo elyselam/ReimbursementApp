@@ -66,14 +66,25 @@ public class LoginActions {
         //findEmployeeByID/Username returns user
         User fullUser = loginServ.doService(u);
         //set the user as a session attribute
+        System.out.println(fullUser.getEmployeeID());
+        System.out.println(fullUser.getFirstName());
+        System.out.println(fullUser.getLastName());
+        System.out.println(fullUser.getEmail());
+        System.out.println(fullUser.isManager());
         if (fullUser.getEmployeeID() == -2 || fullUser == null) {
-            return "/Login.html";
+            System.out.println("fart");
+            System.out.println("fart");
+            System.out.println("fart");
+            System.out.println("fart");
+            System.out.println("fart");
+
+            return "login.html";
         } else if (fullUser.isManager()) {
             request.getSession().setAttribute("user", fullUser);
-            return "/Manager.html";
+            return "manager.html";
         } else {
             request.getSession().setAttribute("user", fullUser);
-            return "/Employee.html";
+            return "employee.html";
         }
 
 
