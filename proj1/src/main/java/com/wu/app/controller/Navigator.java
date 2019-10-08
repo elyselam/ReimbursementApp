@@ -27,6 +27,8 @@ public class Navigator {
                 return ManagerActions.examineEmployee(req, res);
             case "/proj_1_redux_war_exploded/html/managerRegisterEmployee.do":
                 return ManagerActions.RegisterEmployee(req, res);
+            case "/proj_1_redux_war_exploded/html/managerUpdateTicket.do":
+                return ManagerActions.updateTicket(req, res);
             default:
                 System.out.println(req.getRequestURI());
                 return "html/Login.html";

@@ -55,6 +55,7 @@ public class ContextLoader implements ServletContextListener {
                     new ManagerViewAllPending(ticketRepo);
             ManagerViewAllResolved managerViewAllResolved =
                     new ManagerViewAllResolved(ticketRepo);
+            ManagerUpdateTicket managerUpdateTicket = new ManagerUpdateTicket(ticketRepo);
 
             ObjectMapper obMap = new ObjectMapper();
 
@@ -67,6 +68,7 @@ public class ContextLoader implements ServletContextListener {
             sc.setAttribute("managerViewAllEmployeeServ", managerViewAllEmployee);
             sc.setAttribute("managerViewAllPendingServ", managerViewAllPending);
             sc.setAttribute("managerViewAllResolvedServ", managerViewAllResolved);
+            sc.setAttribute("managerUpdateTicketServ", managerUpdateTicket);
             sc.setAttribute("obMap", obMap);
 
         }

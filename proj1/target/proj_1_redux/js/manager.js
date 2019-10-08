@@ -19,8 +19,17 @@
 //     }
 //
 // ];
+var kuku;
+
 window.onload = function() {
     //fetch 'GET' tickets
+
+    kuku=  document.cookie.split('; ').reduce((prev, current) => {
+        const [name, value] = current.split('=');
+        prev[name] = value;
+        return prev
+    }, {});
+    console.log(kuku.firstName);
 
     //search listener
     let searchBtn = document.querySelector('#search-btn');
@@ -40,6 +49,11 @@ window.onload = function() {
         getResolved();
     });
 
+    let allEmployeeBtn = document.querySelector('#allEmployeeBtn');
+    allEmployeeBtn.addEventListener('click', function(){
+        getEmployees();
+    });
+
 }
 
 
@@ -47,6 +61,11 @@ window.onload = function() {
 
 // /* Grab the table from the DOM*/
 // let table = document.querySelector('#table');
+function getEmployees() {
+    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/managerViewAll.do')
+        .then(response => response.json())
+        .then(tickets => {makeEmployeeTable(tickets)})
+}
 
 function getPending() {
     fetch('http://localhost:8090/proj_1_redux_war_exploded/html/managerViewAllPending.do')
@@ -76,8 +95,8 @@ function makePendTable(reimbs){
                 <td>${reimbs[i].submitterID} </td>
                 <td>${reimbs[i].cost} </td>
                 <td>${reimbs[i].description} </td> 
-                <td> <button (click)="approveTik(${reimbs[i].ticketID, true}"> Approve </button></td>
-                <td> <button (click)="approveTik(${reimbs[i].ticketID, false}"> Deny </button></td>
+                <td> <button onclick="approveTik(reimbs[i], true)"> Approve </button></td>
+                <td> <button onclick="approveTik(${reimbs[i]}, false"> Deny </button></td>
          </tr>`);
     }
 }
@@ -105,66 +124,36 @@ function makeResTable(reimbs){
     }
 }
 
-/* this filters by approved status */
-function showApproved(reimbs){
-    let approved = [];
-    for(let tick of reimbs){
-        if(tick.isApproved == true){
-            approved.push(tick);
-        }
-    }
-
-    fillTable(approved);
-}
-
-/* this enables searching by ID received from an input field, '#search-input'  */
-function searchTickets(tickets){
-    let searchTerm = document.querySelector('#search-input').value;
-    let foundTicks = [];
-    for(let tick of tickets){
-        if(tick.id == searchTerm){
-            foundTicks.push(tick);
-        }
-    }
-    return foundTicks;
-}
-
-/* this is used internally to the JS file to yield the complete ticket whenever the submit button is clicked*/
-function searchTicketsById(id){
-    for(let tick of tickets){
-        if(tick.id == id){
-            return tick;
-        }
-
-        else {
-            continue;
-        }
-
-
+function makeEmployeeTable(reimbs) {
+    $("#wutang").replaceWith("<table id='wutang'>")
+    $("#wutang").append(`<tr> 
+        <th>Employee Number</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Manager?</th>
+    </tr>`)
+    for(let i = 0; i<reimbs.length; i++){
+        $("#wutang").append(`<tr>
+                <td>${reimbs[i].employeeID} </td>
+                <td>${reimbs[i].firstName} </td>
+                <td>${reimbs[i].lastName} </td>
+                <td>${reimbs[i].email} </td> 
+                <td>${reimbs[i].manager} </button></td>
+         </tr>`);
     }
 }
-/* this is where you will update the status of the ticket and fetch POST the new ticket*/
- function resolve(id){
-     // this grabs the select HTML element
-    let selectElement = document.querySelector(`#newStatus-${id}`);
-    //this gets the value of the selected HTML option
-    var newStatus = selectElement.options[selectElement.selectedIndex].value;
 
-    //finds the entire ticket by id
-    let found = searchTicketsById(id);
+function approveTik(ticky, truf) {
 
-    //sets the new status
-    if(newStatus == 'approve'){
-        found.isApproved = true; 
-    }
-    else {
-        found.isApproved = false;
-    }
+     ticky[approval] = truf;
+     ticky[reviewerID] = kuku.employeeID;
+     console.log(ticky);
 
-
-    console.log(found);
-    console.log('Send the object above in the body of a Fetch-POST request to your server!')
-    // fetch('http://localhost:8080/Project1/resolve')
-    // method: 'POST',
-    // body: 'found'
- }
+     fetch('http://localhost:8090/proj_1_redux_war_exploded/html/managerUpdateTicket.do', {
+        method: 'Post',
+        body: ticky
+    })
+        .then(response => response.json())
+        .then(tickets => {makeResTable(tickets)})
+}

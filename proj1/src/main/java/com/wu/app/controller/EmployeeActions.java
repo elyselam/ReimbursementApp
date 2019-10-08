@@ -92,7 +92,7 @@ public class EmployeeActions {
     public static String viewTickets(HttpServletRequest req, HttpServletResponse res) {
         try {
             EmployeeViewOwnTickets servy = (EmployeeViewOwnTickets) req.getServletContext().getAttribute("employeeViewOwnTicketsServ");
-            ArrayList<Ticket> tix = servy.doService((int)req.getAttribute("empID"));
+            ArrayList<Ticket> tix = servy.doService(Integer.parseInt(req.getParameter("empID")));
 
             ObjectMapper obMap = (ObjectMapper) req.getServletContext().getAttribute("obMap");
 

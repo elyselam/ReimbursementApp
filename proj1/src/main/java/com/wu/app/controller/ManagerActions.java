@@ -3,10 +3,7 @@ package com.wu.app.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wu.app.model.User;
 import com.wu.app.model.Ticket;
-import com.wu.app.services.ManagerExamineEmployee;
-import com.wu.app.services.ManagerViewAllEmployee;
-import com.wu.app.services.ManagerViewAllPending;
-import com.wu.app.services.ManagerViewAllResolved;
+import com.wu.app.services.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -109,4 +106,25 @@ public class ManagerActions {
 //    }
         return "yay";
     } //THIS MIGHT NOT BE HOW WE ARE SUPPOSED TO END A GET. I DON'T KNOW LOL.
+
+    public static String updateTicket(HttpServletRequest req, HttpServletResponse res) {
+        Ticket newTicket = new Ticket();
+        System.out.println("fart");
+        System.out.println("fart");
+        System.out.println("fart");
+        newTicket.setTicketID(Integer.parseInt(req.getParameter("ticketID")));
+        newTicket.setApproved(Boolean.parseBoolean(req.getParameter("approval")));
+        newTicket.setPending(false);
+        newTicket.setCost(Float.parseFloat(req.getParameter("cost")));
+        newTicket.setSubmitterID(Integer.parseInt(req.getParameter("submitterID")));
+        newTicket.setReviewerID(Integer.parseInt(req.getParameter("reviewerID")));
+        newTicket.setDescription(req.getParameter("description"));
+
+
+
+        ManagerUpdateTicket servy = (ManagerUpdateTicket) req.getServletContext().getAttribute("managerUpdateTicketServ");
+        servy.doService(newTicket);
+
+        return "wat";
+    }
 }

@@ -48,6 +48,7 @@ import com.wu.app.services.LoginService;
 import org.apache.logging.log4j.Logger;
 
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -65,25 +66,20 @@ public class LoginActions {
         User u = new User(0, "Hotmoves", "Ghandi", email, password, false);
         //findEmployeeByID/Username returns user
         User fullUser = loginServ.doService(u);
+        Cookie yum = new Cookie("empID",String.valueOf(fullUser.getEmployeeID()));
+        Cookie yumm = new Cookie("firstName",String.valueOf(fullUser.getFirstName()));
+        res.addCookie(yum);
+        res.addCookie(yumm);
         //set the user as a session attribute
-        System.out.println(fullUser.getEmployeeID());
-        System.out.println(fullUser.getFirstName());
-        System.out.println(fullUser.getLastName());
-        System.out.println(fullUser.getEmail());
-        System.out.println(fullUser.isManager());
         if (fullUser.getEmployeeID() == -2 || fullUser == null) {
-            System.out.println("fart");
-            System.out.println("fart");
-            System.out.println("fart");
-            System.out.println("fart");
-            System.out.println("fart");
-
             return "login.html";
         } else if (fullUser.isManager()) {
             request.getSession().setAttribute("user", fullUser);
+            res.addCookie(yum);
             return "manager.html";
         } else {
             request.getSession().setAttribute("user", fullUser);
+            res.addCookie(yum);
             return "employee.html";
         }
 
