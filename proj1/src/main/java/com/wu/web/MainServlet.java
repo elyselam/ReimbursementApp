@@ -28,6 +28,12 @@ public class MainServlet  extends HttpServlet {
         System.out.println(request);
         request.getRequestDispatcher(targetURL).forward(request, response);
     }
+
+    @Override
+    protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String targetURL = Navigator.navigate(request, response);
+    }
+
 }
 
 

@@ -12,14 +12,17 @@ public class ManagerUpdateTicket {
 
     public Ticket doService(Ticket tik) {
         if (tik != null) {
-            Ticket tok = tRepo.update(tik) ;
+            Ticket tok = tRepo.findByID(tik.getTicketID());
             //Log.Info("Ticket probably in database");
-            System.out.println(tok.getReviewerID());
-            System.out.println(tok.isApproved());
-            System.out.println(tok.getDescription());
-
+            tok.setReviewerID(tik.getReviewerID());
+            tok.setApproved(tik.isApproved());
+            tok.setPending(false);
+            tRepo.update(tok) ;
             return tok;
         }
+
+
+        
         return null;
     }
 }

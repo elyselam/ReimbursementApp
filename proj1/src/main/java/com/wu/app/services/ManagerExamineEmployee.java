@@ -16,6 +16,12 @@ public class ManagerExamineEmployee {
         if (empID > 0) {
             ArrayList<Ticket> gottem = new ArrayList<>();
             gottem = tRepo.findAllByEmployeeIDCanSort(empID);
+            System.out.println("fart");
+            System.out.println("fart");
+            System.out.println("fart");
+            System.out.println("fart");
+            System.out.println("fart");
+            System.out.println("fart");
             if (gottem.get(0) == null) {
                 //Log.Info("ruh roh, bad employee number
             }

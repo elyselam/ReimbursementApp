@@ -54,13 +54,21 @@ window.onload = function() {
         getEmployees();
     });
 
-}
+};
 
 
 
 
 // /* Grab the table from the DOM*/
 // let table = document.querySelector('#table');
+
+function getSearchTix() {
+    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/managerExamineEmployee.do?targetID=' +document.getElementById('#search-input').value)
+        .then(response => response.json())
+        .then(tickets => {makeResTable(tickets)})
+}
+
+
 function getEmployees() {
     fetch('http://localhost:8090/proj_1_redux_war_exploded/html/managerViewAll.do')
         .then(response => response.json())
@@ -88,16 +96,16 @@ function makePendTable(reimbs){
         <th>Cost Size</th>
         <th>Description</th>
         <th>Take Action?</th>
-    </tr>`)
+    </tr>`);
     for(let i = 0; i<reimbs.length; i++){
         $("#wutang").append(`<tr>
                 <td>${reimbs[i].ticketID} </td>
                 <td>${reimbs[i].submitterID} </td>
                 <td>${reimbs[i].cost} </td>
                 <td>${reimbs[i].description} </td> 
-                <td> <button onclick="approveTik(reimbs[i], true)"> Approve </button></td>
-                <td> <button onclick="approveTik(${reimbs[i]}, false"> Deny </button></td>
-         </tr>`);
+                <td> <button onclick="approveTik(event)" data1="${reimbs[i].ticketID}" data2="true" > Approve </button></td>
+                <td> <button onclick="approveTik(event)" id="${i}" data1="${reimbs[i].ticketID}" data2="false" > Deny </button></td>
+         </tr>`)
     }
 }
 
@@ -144,16 +152,23 @@ function makeEmployeeTable(reimbs) {
     }
 }
 
-function approveTik(ticky, truf) {
+function approveTik(event) {
+    console.log(event.target.attributes.data1.nodeValue);
+    let ticky = {};
+    ticky.ticketID = event.target.attributes.data1.nodeValue;
+    ticky.reviewerID = kuku.empID;
+    ticky.approved = event.target.attributes.data2.nodeValue;
 
-     ticky[approval] = truf;
-     ticky[reviewerID] = kuku.employeeID;
-     console.log(ticky);
+    console.log(ticky);
+
 
      fetch('http://localhost:8090/proj_1_redux_war_exploded/html/managerUpdateTicket.do', {
-        method: 'Post',
-        body: ticky
+        method: 'Put',
+         headers: {
+             'Content-Type': 'application/json'
+         },
+        body: JSON.stringify(ticky)
     })
         .then(response => response.json())
-        .then(tickets => {makeResTable(tickets)})
+         .then(tickets => {console.log(tickets)})
 }
