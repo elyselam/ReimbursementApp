@@ -73,7 +73,7 @@ public class ManagerActions {
     public static String examineEmployee(HttpServletRequest req, HttpServletResponse res) {
         try {
             ManagerExamineEmployee servy = (ManagerExamineEmployee) req.getServletContext().getAttribute("managerExamineEmployeeServ");
-            ArrayList<Ticket> tix = servy.doService((int)req.getAttribute("targetID"));
+            ArrayList<Ticket> tix = servy.doService(Integer.parseInt(req.getParameter("targetID")));
 
             ObjectMapper obMap = (ObjectMapper) req.getServletContext().getAttribute("obMap");
 
@@ -90,21 +90,14 @@ public class ManagerActions {
     }
 
     public static String RegisterEmployee(HttpServletRequest req, HttpServletResponse res) {
-//        try {
-//            ManagerViewAllEmployee servy = (ManagerViewAllEmployee) req.getServletContext().getAttribute("managerViewAllEmployeeServ");
-//        User emp;
-//
-//        //like this for whatever fields we allow them to change
-//        //emp.setFirstName((String)req.getAttribute("firstynamey"));
-//
-//        //User noo = servy.doService(emp);
-//
-//
-//    } catch (IOException e) {
-//        e.printStackTrace();
-//        return "boo";
-//    }
-        return "yay";
+        ManagerRegisterEmployee servy = (ManagerRegisterEmployee) req.getServletContext().getAttribute("managerRegisterEmployeeServ");
+
+        User hired = new User(0, "temp", "name", req.getParameter("email"), req.getParameter("psw"), false);
+
+        servy.doService(hired);
+
+
+        return "register.html";
     } //THIS MIGHT NOT BE HOW WE ARE SUPPOSED TO END A GET. I DON'T KNOW LOL.
 
     public static String updateTicket(HttpServletRequest req, HttpServletResponse res) {

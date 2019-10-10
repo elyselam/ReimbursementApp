@@ -9,20 +9,39 @@ window.onload = function() {
         return prev
     }, {});
 
-
+    console.log("bop")
     //click listener to show pending ticks
     let pendingBtn = document.querySelector('#pendingBtn');
     pendingBtn.addEventListener('click', function(){
         getPending();
     });
+    console.log("bop")
+
+    let submitBtn = document.querySelector('#submitBtn');
+    submitBtn.addEventListener('click', function(){
+        submitTick(event);
+    });
+    console.log("bop")
 
 }
 
 
 
 
+
 // /* Grab the table from the DOM*/
 // let table = document.querySelector('#table');
+
+function submitTick(event) {
+    event.preventDefault();
+    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/submitTicket.do?empID='+kukie.empID+'&cost='+document.getElementById("amounty").value+'&description='+document.getElementById('descripty').value)
+        .then(response => response.json())
+        .then(getPending())
+}
+
+function getData() {
+    return false
+}
 
 function getPending() {
     fetch('http://localhost:8090/proj_1_redux_war_exploded/html/empViewTickets.do?empID='+kukie.empID)

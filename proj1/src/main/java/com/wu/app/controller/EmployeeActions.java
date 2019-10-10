@@ -48,13 +48,11 @@ import java.util.ArrayList;
 public class EmployeeActions {
     public static String submitTicket(HttpServletRequest req, HttpServletResponse res) {
         Ticket newTicket = new Ticket();
-        User emp = (User)req.getSession().getAttribute("user");
-
         newTicket.setApproved(false);
         newTicket.setPending(true);
-        newTicket.setCost(Float.parseFloat(req.getParameter("amountInput")));
-        newTicket.setSubmitterID(emp.getEmployeeID());
-        newTicket.setDescription(req.getParameter("descriptionInput"));
+        newTicket.setCost(Float.parseFloat(req.getParameter("cost")));
+        newTicket.setSubmitterID(Integer.parseInt(req.getParameter("empID")));
+        newTicket.setDescription(req.getParameter("description"));
 
         EmployeeSubmitTicket servy = (EmployeeSubmitTicket)req.getServletContext().getAttribute("submitTicketServ");
         servy.doService(newTicket);

@@ -54,6 +54,12 @@ window.onload = function() {
         getEmployees();
     });
 
+    let submitBtn = document.querySelector('#registerbtn');
+    submitBtn.addEventListener('click', function(){
+        submitEmp(event);
+    });
+    console.log("bop")
+
 };
 
 
@@ -61,9 +67,15 @@ window.onload = function() {
 
 // /* Grab the table from the DOM*/
 // let table = document.querySelector('#table');
+function submitEMP(event) {
+    event.preventDefault();
+    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/managerRegisterEmployee.do?cost='+document.getElementById("amounty").value+'&description='+document.getElementById('descripty').value)
+        .then(response => response.json())
+        .then(getPending())
+}
 
 function getSearchTix() {
-    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/managerExamineEmployee.do?targetID=' +document.getElementById('#search-input').value)
+    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/managerExamineEmployee.do?targetID=' +document.getElementById('search-input').value)
         .then(response => response.json())
         .then(tickets => {makeResTable(tickets)})
 }
@@ -89,7 +101,7 @@ function getResolved() {
 
 function makePendTable(reimbs){
 
-    $("#wutang").replaceWith("<table id='wutang'>")
+    ($"#wutang").replaceWith("<table id='wutang'>")
     $("#wutang").append(`<tr> 
         <th>Ticket ID</th>
         <th>Submitter ID</th>
