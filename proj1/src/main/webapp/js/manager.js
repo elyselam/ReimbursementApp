@@ -195,5 +195,8 @@ function approveTik(event) {
         body: JSON.stringify(ticky)
     })
         .then(response => response.json())
-         .then(tickets => {console.log(tickets)})
+         .then(setTimeout(() => {
+             alert("Wait a second for the update!");
+             getPending();
+         }, 3000))
 }
