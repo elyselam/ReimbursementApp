@@ -1,6 +1,7 @@
 var kukie;
 
 window.onload = function() {
+
     //fetch 'GET' tickets
 
     kukie=  document.cookie.split('; ').reduce((prev, current) => {
@@ -25,13 +26,16 @@ window.onload = function() {
         updateEm(event);
     });
 
-
+let empName = kukie.firstName;
+let welcome = document.querySelector('#welcome');
+this.appendUserName(empName)
 
 };
 
-
-
-
+function appendUserName(empName) {
+    console.log(kukie.firstName);
+    welcome.innerHTML = `Welcome back, ${empName}!`;
+}
 
 // /* Grab the table from the DOM*/
 // let table = document.querySelector('#table');
@@ -54,7 +58,7 @@ function updateEm(event) {
         body: JSON.stringify(newemp)
     })
         .then(response => response.json())
-        .then(console.log('sexyyyy'))
+        .then(alert("Updated!"));
 }
 
 function submitTick(event) {
@@ -76,7 +80,9 @@ function submitTick(event) {
         body: JSON.stringify(newtick)
     })
         .then(response => response.json())
-        .then(getPending())
+        .then(getPending());
+        
+        alert("Ticket submitted!");
 }
 
 function getPending() {

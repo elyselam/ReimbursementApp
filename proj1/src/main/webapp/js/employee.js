@@ -26,7 +26,7 @@ window.onload = function() {
         updateEm(event);
     });
 
-let empName = "Bob"; //comes from DB/kukie.firstName;
+let empName = kukie.firstName;
 let welcome = document.querySelector('#welcome');
 this.appendUserName(empName)
 

@@ -73,7 +73,7 @@ function submitEmp(event) {
     newemp.manager = false;
     newemp.email = document.querySelector('#email').value;
     newemp.hashedPassword = document.querySelector('#psw').value;
-    newemp.firstName = 'temp';
+    newemp.firstName = 'updateyourname';
     newemp.lastName = 'tempy';
     newemp.employeeID = 0;
     console.log(newemp);
@@ -84,8 +84,8 @@ function submitEmp(event) {
         },
         body: JSON.stringify(newemp)
     })
-        .then(response => response.json())
-        .then(console.log('sexyyyy'))
+        .then(response => response.json());
+        alert("Registered!");
 }
 
 function getSearchTix() {

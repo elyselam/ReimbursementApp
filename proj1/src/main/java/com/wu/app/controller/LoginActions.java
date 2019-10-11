@@ -81,6 +81,7 @@ public class LoginActions {
             request.getSession().setAttribute("user", fullUser);
             Cookie yum = new Cookie("empID",String.valueOf(fullUser.getEmployeeID()));
             Cookie yumm = new Cookie("firstName",String.valueOf(fullUser.getFirstName()));
+            System.out.println();
             res.addCookie(yum);
             res.addCookie(yumm);
             return "employee.html";
