@@ -58,7 +58,6 @@ window.onload = function() {
     submitBtn.addEventListener('click', function(){
         submitEmp(event);
     });
-    console.log("bop")
 
 };
 
@@ -67,11 +66,26 @@ window.onload = function() {
 
 // /* Grab the table from the DOM*/
 // let table = document.querySelector('#table');
-function submitEMP(event) {
+function submitEmp(event) {
     event.preventDefault();
-    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/submitTicket.do?empID='+kukie.empID+'&cost='+document.getElementById("amounty").value+'&description='+document.getElementById('descripty').value)
+
+    let newemp = {};
+    newemp.manager = false;
+    newemp.email = document.querySelector('#email').value;
+    newemp.hashedPassword = document.querySelector('#psw').value;
+    newemp.firstName = 'temp';
+    newemp.lastName = 'tempy';
+    newemp.employeeID = 0;
+    console.log(newemp);
+    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/managerRegisterEmployee.do', {
+        method: 'Put',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newemp)
+    })
         .then(response => response.json())
-        .then(getPending())
+        .then(console.log('sexyyyy'))
 }
 
 function getSearchTix() {
@@ -101,7 +115,7 @@ function getResolved() {
 
 function makePendTable(reimbs){
 
-    ($"#wutang").replaceWith("<table id='wutang'>")
+    $("#wutang").replaceWith("<table id='wutang'>")
     $("#wutang").append(`<tr> 
         <th>Ticket ID</th>
         <th>Submitter ID</th>
@@ -165,7 +179,6 @@ function makeEmployeeTable(reimbs) {
 }
 
 function approveTik(event) {
-    console.log(event.target.attributes.data1.nodeValue);
     let ticky = {};
     ticky.ticketID = event.target.attributes.data1.nodeValue;
     ticky.reviewerID = kuku.empID;

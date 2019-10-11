@@ -6,6 +6,7 @@ import com.wu.app.model.User;
 import com.wu.app.utils.ConnectionManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -219,11 +220,11 @@ public class JDBCUserDao implements UserRepository {
                 int out_id;
                 c = cMan.getConnection();
                 CallableStatement statement = c.prepareCall(sql);
-                statement.setInt(1, Types.INTEGER);
+                statement.setInt(1, obj.getEmployeeID());
                 statement.setString(2, obj.getFirstName());
-                statement.setString(3, obj.getFirstName());
+                statement.setString(3, obj.getLastName());
                 statement.setString(4, obj.getEmail());
-                statement.setString(5, obj.getHashedPassword());
+                statement.setString(5, BCrypt.hashpw(obj.getHashedPassword(), BCrypt.gensalt()));
                 statement.setBoolean(6,obj.isManager());
 
                 // turn off auto-commit
@@ -231,9 +232,6 @@ public class JDBCUserDao implements UserRepository {
                 c.setAutoCommit(false);
 
                 statement.execute();
-
-                out_id = (Integer) statement.getObject(1);
-                obj.setEmployeeID(out_id);
                 // everything went well commit and reset the database auto-commit flag
                 c.commit();
                 c.setAutoCommit(true);
@@ -276,7 +274,7 @@ public class JDBCUserDao implements UserRepository {
                 statement.setString(2, obj.getFirstName());
                 statement.setString(3, obj.getLastName());
                 statement.setString(4, obj.getEmail());
-                statement.setString(5, obj.getHashedPassword());
+                statement.setString(5, BCrypt.hashpw(obj.getHashedPassword(), BCrypt.gensalt()));
                 statement.setBoolean(6,obj.isManager());
 
                 // turn off auto-commit

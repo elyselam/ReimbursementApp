@@ -9,21 +9,25 @@ window.onload = function() {
         return prev
     }, {});
 
-    console.log("bop")
     //click listener to show pending ticks
     let pendingBtn = document.querySelector('#pendingBtn');
     pendingBtn.addEventListener('click', function(){
         getPending();
     });
-    console.log("bop")
 
     let submitBtn = document.querySelector('#submitBtn');
     submitBtn.addEventListener('click', function(){
         submitTick(event);
     });
-    console.log("bop")
 
-}
+    let updateBtn = document.querySelector('#updateBtn');
+    updateBtn.addEventListener('click', function(){
+        updateEm(event);
+    });
+
+
+
+};
 
 
 
@@ -32,15 +36,47 @@ window.onload = function() {
 // /* Grab the table from the DOM*/
 // let table = document.querySelector('#table');
 
-function submitTick(event) {
+function updateEm(event) {
     event.preventDefault();
-    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/submitTicket.do?empID='+kukie.empID+'&cost='+document.getElementById("amounty").value+'&description='+document.getElementById('descripty').value)
+
+    let newemp = {};
+    newemp.manager = false;
+    newemp.email = 'temp';
+    newemp.hashedPassword = document.querySelector('#passwordy').value;
+    newemp.firstName = document.querySelector('#firsty').value
+    newemp.lastName = document.querySelector('#lasty').value
+    newemp.employeeID = kukie.empID;
+    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/updateInfo.do', {
+        method: 'Put',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newemp)
+    })
         .then(response => response.json())
-        .then(getPending())
+        .then(console.log('sexyyyy'))
 }
 
-function getData() {
-    return false
+function submitTick(event) {
+    event.preventDefault();
+    let newtick = {};
+    newtick.ticketID = 0;
+    newtick.submitterID = kukie.empID;
+    newtick.cost = document.querySelector('#amounty').value;
+    newtick.description = document.querySelector('#descripty').value;
+    newtick.reviewerID = 0;
+    newtick.approved = false;
+    newtick.pending = true;
+    console.log(newtick);
+    fetch('http://localhost:8090/proj_1_redux_war_exploded/html/submitTicket.do', {
+        method: 'Put',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newtick)
+    })
+        .then(response => response.json())
+        .then(getPending())
 }
 
 function getPending() {

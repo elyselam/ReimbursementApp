@@ -10,7 +10,8 @@ public class ManagerRegisterEmployee {
         this.uRepo = uRepo;
     }
 
-    public User doService(User boyo) { // someday implent bcrypt
+    public User doService(User boyo) { // someday implent bcrypt\
+
         if (boyo != null) {
             int ido =uRepo.add(boyo); //get new EmployeeID from database
             boyo.setEmployeeID(ido); //update Employee ID in local object

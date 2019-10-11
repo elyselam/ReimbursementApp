@@ -2,6 +2,7 @@ package com.wu.app.services;
 
 import com.wu.app.dao.UserRepository;
 import com.wu.app.model.User;
+import org.mindrot.jbcrypt.BCrypt;
 
 public class LoginService {
     private UserRepository uRepo;
@@ -20,10 +21,13 @@ public class LoginService {
         if (authMe.getHashedPassword() == null) {return failed;}
 
 
-
         User usey = uRepo.findByEmail(authMe.getEmail());
-
-        return usey; //BCRYPT MIGHT CAUSE PROBLEMS
-
+        boolean auth = (BCrypt.checkpw(authMe.getHashedPassword(),usey.getHashedPassword()));
+        if (auth) {
+            return usey; //BCRYPT MIGHT CAUSE PROBLEMS
+        }
+        else {
+            return failed;
+        }
     }
 }

@@ -31,7 +31,7 @@ public class MainServlet  extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String targetURL = Navigator.navigate(request, response);
+        Navigator.navigate(request, response);
     }
 
 }

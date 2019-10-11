@@ -66,20 +66,23 @@ public class LoginActions {
         User u = new User(0, "Hotmoves", "Ghandi", email, password, false);
         //findEmployeeByID/Username returns user
         User fullUser = loginServ.doService(u);
-        Cookie yum = new Cookie("empID",String.valueOf(fullUser.getEmployeeID()));
-        Cookie yumm = new Cookie("firstName",String.valueOf(fullUser.getFirstName()));
-        res.addCookie(yum);
-        res.addCookie(yumm);
+
         //set the user as a session attribute
         if (fullUser.getEmployeeID() == -2 || fullUser == null) {
             return "login.html";
         } else if (fullUser.isManager()) {
             request.getSession().setAttribute("user", fullUser);
+            Cookie yum = new Cookie("empID",String.valueOf(fullUser.getEmployeeID()));
+            Cookie yumm = new Cookie("firstName",String.valueOf(fullUser.getFirstName()));
             res.addCookie(yum);
+            res.addCookie(yumm);
             return "manager.html";
         } else {
             request.getSession().setAttribute("user", fullUser);
+            Cookie yum = new Cookie("empID",String.valueOf(fullUser.getEmployeeID()));
+            Cookie yumm = new Cookie("firstName",String.valueOf(fullUser.getFirstName()));
             res.addCookie(yum);
+            res.addCookie(yumm);
             return "employee.html";
         }
 

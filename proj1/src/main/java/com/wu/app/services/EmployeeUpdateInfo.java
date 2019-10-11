@@ -12,7 +12,12 @@ public class EmployeeUpdateInfo {
 
     public User doService(User nuInfo) {
         if (nuInfo != null) {
-            return uRepo.update(nuInfo);
+            System.out.println(nuInfo.getEmployeeID());
+            User mrMan = uRepo.findByID(nuInfo.getEmployeeID());
+            mrMan.setFirstName(nuInfo.getFirstName());
+            mrMan.setLastName(nuInfo.getLastName());
+            mrMan.setHashedPassword(nuInfo.getHashedPassword());
+            return uRepo.update(mrMan);
         }
         return null;
     }

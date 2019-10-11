@@ -47,14 +47,16 @@ import java.util.ArrayList;
 
 public class EmployeeActions {
     public static String submitTicket(HttpServletRequest req, HttpServletResponse res) {
-        Ticket newTicket = new Ticket();
-        newTicket.setApproved(false);
-        newTicket.setPending(true);
-        newTicket.setCost(Float.parseFloat(req.getParameter("cost")));
-        newTicket.setSubmitterID(Integer.parseInt(req.getParameter("empID")));
-        newTicket.setDescription(req.getParameter("description"));
+        ObjectMapper obMap = (ObjectMapper) req.getServletContext().getAttribute("obMap");
 
         EmployeeSubmitTicket servy = (EmployeeSubmitTicket)req.getServletContext().getAttribute("submitTicketServ");
+
+        Ticket newTicket = null;
+        try {
+            newTicket = obMap.readValue(req.getInputStream(), Ticket.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         servy.doService(newTicket);
 
         return "wat";
@@ -63,14 +65,20 @@ public class EmployeeActions {
     }
     public static String updateInfo(HttpServletRequest req, HttpServletResponse res) {
         try {
-            User emp = (User)req.getSession().getAttribute("user");
             EmployeeUpdateInfo servy = (EmployeeUpdateInfo) req.getServletContext().getAttribute("updateInfoServ");
             ObjectMapper obMap = (ObjectMapper) req.getServletContext().getAttribute("obMap");
 
             //like this for whatever fields we allow them to change
-            emp.setFirstName((String)req.getAttribute("firstynamey"));
+            User update = obMap.readValue(req.getInputStream(),User.class);
 
-            User noo = servy.doService(emp);
+            System.out.println(update.getEmployeeID());
+            System.out.println(update.isManager());
+            System.out.println(update.getEmail());
+            System.out.println(update.getFirstName());
+            System.out.println(update.getLastName());
+            System.out.println(update.getHashedPassword());
+
+            User noo = servy.doService(update);
 
             String json = obMap.writeValueAsString(noo);
 

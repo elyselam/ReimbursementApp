@@ -8,6 +8,9 @@ public class User {
     private String hashedPassword;
     private boolean isManager;
 
+    public User() {
+    }
+
     public User(int employeeID, String firstName, String lastName, String email, String hashedPassword, boolean isManager) {
         this.employeeID = employeeID;
         this.firstName = firstName;

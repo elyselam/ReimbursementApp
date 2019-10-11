@@ -91,9 +91,13 @@ public class ManagerActions {
 
     public static String RegisterEmployee(HttpServletRequest req, HttpServletResponse res) {
         ManagerRegisterEmployee servy = (ManagerRegisterEmployee) req.getServletContext().getAttribute("managerRegisterEmployeeServ");
-
-        User hired = new User(0, "temp", "name", req.getParameter("email"), req.getParameter("psw"), false);
-
+        ObjectMapper obMap = (ObjectMapper) req.getServletContext().getAttribute("obMap");
+        User hired = null;
+        try {
+            hired = obMap.readValue(req.getInputStream(), User.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         servy.doService(hired);
 
 
