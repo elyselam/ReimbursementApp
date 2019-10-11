@@ -84,8 +84,8 @@ function submitEmp(event) {
         },
         body: JSON.stringify(newemp)
     })
-        .then(response => response.json())
-        .then(console.log('sexyyyy'))
+        .then(response => response.json());
+        alert("Registered!");
 }
 
 function getSearchTix() {
