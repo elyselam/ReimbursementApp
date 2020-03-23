@@ -1,60 +1,0 @@
-
-fsquid:S2095ú"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(‹èäŒ8ÆÚ ¼Ø-
-isquid:CommentedOutCodeLine±"<This block of commented-out lines of code should be removed.(‘é°|8È×žåØ-
-Fsquid:S1148w"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ò¡Ñ»Ø-
-Bsquid:S1148¥"#Use a logger to log this exception.(Ç’Çê8Öç åØ-
-Fsquid:S1148D"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8µ‡¨Ø-
-esquid:S1192*"GDefine a constant instead of duplicating this literal "amount" 4 times.(ÿïÉÂ8È×žåØ-
-Jsquid:S1168«"+Return an empty collection instead of null.(¥¹ï8íîŸåØ-
-Gsquid:S1148Ø"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8Ï™¼Ø-
-[squid:S2629"7Use the built-in formatting to construct this argument.(ÇŒ…Šýÿÿÿÿ8Ò¹è»Ø-
-msquid:S2095!"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(³­Ì8µ‡¨Ø-
-Gsquid:S1148¬"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8Ò¹è»Ø-
-fsquid:S2095¼"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(‹èäŒ8È×žåØ-
-:squid:S3626Ó"Remove this redundant jump.(ûÁÝ…8Ï™¼Ø-
-esquid:S3457"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šýÿÿÿÿ8Ò¹è»Ø-
-dsquid:S3457Z"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šýÿÿÿÿ8ò¡Ñ»Ø-
-ssquid:S2095¹"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(÷šüõÿÿÿÿÿ8Ë¤×æØ-
-Gsquid:S1148Ý"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8È×žåØ-
-vsquid:S00117Ä"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ¡Êëúÿÿÿÿ8Ï™¼Ø-
-Bsquid:S1148ä"#Use a logger to log this exception.(Ç’Çê8È×žåØ-
-Bsquid:S1148³"#Use a logger to log this exception.(Ç’Çê8Ò¹è»Ø-
-fsquid:S00116"NRename this field "LOG" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àëÑÑ
-Jsquid:S1168ê"+Return an empty collection instead of null.(¥¹ï8…‚›¦Ø-
-Gsquid:S1148›"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8ÆÚ ¼Ø-
-isquid:S1192-"KDefine a constant instead of duplicating this literal "is_pending" 4 times.(³¬Á€8È×žåØ-
-esquid:S2095$"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(‹èäŒ8µ‡¨Ø-
-esquid:S3457ø"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šýÿÿÿÿ8Öç åØ-
-{squid:S1192"XDefine a constant instead of duplicating this literal "Executing statement \n " 7 times.(ÇŒ…Šýÿÿÿÿ8Ò¹è»Ø-
-Asquid:S1148K"#Use a logger to log this exception.(Ç’Çê8µ‡¨Ø-
-[squid:S2629Á"7Use the built-in formatting to construct this argument.(ÇŒ…Šýÿÿÿÿ8Ï™¼Ø-
-Zsquid:S2629"7Use the built-in formatting to construct this argument.(ÇŒ…Šýÿÿÿÿ8µ‡¨Ø-
-esquid:S3457ô"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šýÿÿÿÿ8ÆÚ ¼Ø-
-[squid:S2629¶"7Use the built-in formatting to construct this argument.(ÇŒ…Šýÿÿÿÿ8È×žåØ-
-Bsquid:S1148ß"#Use a logger to log this exception.(Ç’Çê8Ï™¼Ø-
-[squid:S2629ø"7Use the built-in formatting to construct this argument.(ÇŒ…Šýÿÿÿÿ8Öç åØ-
-vsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ¡Êëúÿÿÿÿ8ŽŸì»Ø-
-esquid:S3457Á"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šýÿÿÿÿ8Ï™¼Ø-
-ssquid:S2095’"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(õéÌãùÿÿÿÿ8Ò¹è»Ø-
-ssquid:S2095Æ"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(õéÌãùÿÿÿÿ8Ï™¼Ø-
-isquid:CommentedOutCodeLineó"<This block of commented-out lines of code should be removed.(‘é°|8Öç åØ-
-psquid:S1192)"MDefine a constant instead of duplicating this literal "submitter_id" 4 times.(ˆÀ£†üÿÿÿÿ8È×žåØ-
-:squid:S3626å"Remove this redundant jump.(ûÁÝ…8Ï™¼Ø-
-osquid:CommentedOutCodeLineª"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8Öç åØ-
-osquid:S1192,"LDefine a constant instead of duplicating this literal "reviewer_id" 4 times.(ÆŒ÷Óùÿÿÿÿ8È×žåØ-
-Zsquid:S2629Z"7Use the built-in formatting to construct this argument.(ÇŒ…Šýÿÿÿÿ8ò¡Ñ»Ø-
-Jsquid:S1168¨"+Return an empty collection instead of null.(¥¹ï8…‚›¦Ø-
-osquid:CommentedOutCodeLineé"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ8È×žåØ-
-[squid:S2629ô"7Use the built-in formatting to construct this argument.(ÇŒ…Šýÿÿÿÿ8ÆÚ ¼Ø-
-jsquid:S1192+"LDefine a constant instead of duplicating this literal "description" 4 times.(”ï¸µ8È×žåØ-
-rsquid:S2095]"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(õéÌãùÿÿÿÿ8ò¡Ñ»Ø-
-ssquid:S2095÷"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(÷šüõÿÿÿÿÿ8Ê˜ÖæØ-
-esquid:S3457¶"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šýÿÿÿÿ8È×žåØ-
-Osquid:S1481Ä"+Remove this unused "out_id" local variable.(Õ¡Êëúÿÿÿÿ8Ï™¼Ø-
-Bsquid:S1148¢"#Use a logger to log this exception.(Ç’Çê8ÆÚ ¼Ø-
-fsquid:S2095ý"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(‹èäŒ8Öç åØ-
-Gsquid:S1148ž"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8Öç åØ-
-dsquid:S3457"AFormat specifiers should be used instead of string concatenation.(ÇŒ…Šýÿÿÿÿ8µ‡¨Ø-
-Asquid:S1148~"#Use a logger to log this exception.(Ç’Çê8ò¡Ñ»Ø-
-ssquid:S2095û"OUse try-with-resources or close this "CallableStatement" in a "finally" clause.(÷šüõÿÿÿÿÿ8‚‚ØæØ-
-jsquid:S1192."LDefine a constant instead of duplicating this literal "is_approved" 4 times.(ËÉ‡›8È×žåØ-

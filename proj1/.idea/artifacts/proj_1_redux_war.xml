@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="proj_1_redux:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>proj_1_redux</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="proj_1_redux.war">
+      <element id="artifact" artifact-name="proj_1_redux:war exploded" />
+    </root>
+  </artifact>
+</component>
